@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* Project Navigation */
 const projects = [
-    { title: "Chatbot AI", description: "Built an intelligent chatbot using Python & NLP." },
-    { title: "Data Sorting with R", description: "Data visualization and cleaning project using R & SQL." },
-    { title: "Portfolio Website", description: "This personal portfolio built using HTML, CSS, and JavaScript." }
+    { title: "Chatbot AI", description: "Built an intelligent chatbot using Python & NLP.", image: "images/image1.jpg" },
+    { title: "Data Sorting with R", description: "Data visualization and cleaning using R.", image: "images/image2.jpg" },
+    { title: "Portfolio Website", description: "Personal portfolio built using HTML, CSS, and JS.", image: "images/image3.jpg" }
 ];
 
 let currentProject = 0;
@@ -56,6 +56,7 @@ let currentProject = 0;
 function updateProject() {
     document.getElementById("project-title").innerText = projects[currentProject].title;
     document.getElementById("project-description").innerText = projects[currentProject].description;
+    document.getElementById("project-image").src = projects[currentProject].image;
 }
 
 function nextProject() {
