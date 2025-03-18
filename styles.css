@@ -46,9 +46,22 @@ section {
     text-align: center;
 }
 
+.project-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.project {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
-
+.project:hover {
+    transform: scale(1.1);
+}
 
 .btn {
     background: cyan;
