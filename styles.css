@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: black;
     color: white;
     overflow-x: hidden;
@@ -15,77 +15,65 @@ canvas {
     z-index: -1;
 }
 
-header {
+/* First Page: Introduction */
+#intro {
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: cyan;
-}
-
-section {
-    padding: 100px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-.project-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.intro-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: cyan;
+    transition: opacity 2s ease-in-out;
 }
 
-.project {
+.intro-text h2 {
+    font-size: 2rem;
+    color: white;
+}
+
+/* After Scroll: Background Turns Black */
+.main-content {
+    background: black;
+    padding: 50px;
+}
+
+/* Widget Style */
+.widget {
     background: #222;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
-    transition: 0.3s;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
 }
 
-.project:hover {
-    transform: scale(1.1);
+/* Projects Section */
+.project-display {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.btn {
-    background: cyan;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+.arrow {
+    position: absolute;
+    top: 50%;
+    background: none;
+    border: none;
+    color: cyan;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-.skill .bar {
-    width: 100%;
-    height: 10px;
-    background: gray;
-    border-radius: 5px;
+.arrow.left {
+    left: 20px;
 }
 
-.fill {
-    height: 100%;
-    background: cyan;
-    border-radius: 5px;
-    width: 0;
-    transition: width 1s;
+.arrow.right {
+    right: 20px;
 }
-
-.java { width: 90%; }
-.python { width: 85%; }
-.sql { width: 80%; }
