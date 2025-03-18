@@ -1,118 +1,282 @@
-body {
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* 🔲 General Styles */
+body {
     background-color: black;
     color: white;
-    overflow-x: hidden;
 }
 
-canvas {
+/* 📌 Header */
+header {
+    background-color: rgba(20, 20, 20, 0.95);
+    width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-}
-
-/* First Page: Introduction */
-#intro {
-    height: 100vh;
+    z-index: 1000;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 15px 120px;
+    transition: background 0.3s ease-in-out;
 }
 
-.intro-text h1 {
-    font-size: 4rem;
-    font-weight: bold;
+/* .logo {
+    font-weight: 800;
+    font-size: 1.8em;
+    color: white;
+    letter-spacing: 2px;
+} 
+    //scrapped*/
+
+.navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    padding: 10px 15px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation button:hover {
+    color: cyan;
+    transform: scale(1.1);
+}
+
+/* 🏠 Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    background: url(images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+}
+
+.intro {
+    z-index: 10;
+    max-width: 700px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.intro h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    font-weight: 600;
     color: cyan;
 }
 
-.intro-text h2 {
-    font-size: 2rem;
-    color: white;
+.intro p {
+    font-size: 1.4em;
+    margin-top: 10px;
+    font-weight: 400;
 }
 
-/* Main Content */
-.main-content {
-    background: black;
-    padding: 50px;
+.highlight {
+    color: cyan;
+    font-weight: bold;
 }
 
-/* Widget Style */
+/* 📦 Section Containers */
+section {
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info {
+    background: rgba(20, 20, 20, 0.8);
+    border-radius: 15px;
+    padding: 40px;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.info:hover {
+    border: 2px solid cyan;
+    transform: scale(1.03);
+}
+
+.info h1 {
+    text-decoration: underline;
+}
+
+/* 📚 Skills & Education Widgets */
+#education, #skills, #experience {
+    display: flex;
+    justify-content: center;
+}
+
 .widget {
-    background: #222;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    padding: 20px;
     border-radius: 10px;
-    margin: 20px auto;
-    max-width: 600px;
+    margin: 10px;
     text-align: center;
-    border: 2px solid white;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: border 0.3s ease-in-out;
 }
 
 .widget:hover {
-    transform: scale(1.05);
     border-color: cyan;
 }
 
-/* Projects Section */
+/* Project Section */
 .project-display {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    position: relative;
+    width: 80%;
+}
+
+.project-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.project-content:hover {
+    border: 2px solid cyan;
+}
+
+.project-content a {
+    text-decoration: none;
+    color: white;
+    display: block;
 }
 
 .project-content img {
     width: 100%;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 10px;
-    margin-top: 10px;
 }
 
-.arrow {
-    position: absolute;
-    top: 50%;
+/* Buttonsssssss */
+.project-navigation button {
     background: none;
-    border: none;
-    color: cyan;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-.arrow.left {
-    left: 20px;
-}
-
-.arrow.right {
-    right: 20px;
-}
-
-/* Footer */
-footer {
-    background: #111;
-    text-align: center;
-    padding: 30px;
-    margin-top: 50px;
-}
-
-.footer-content h2 {
-    color: cyan;
-}
-
-.social-links {
-    margin-top: 10px;
-}
-
-.social-links a {
+    border: 2px solid white;
     color: white;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 5px;
+    border-radius: 5px;
 }
 
-.social-links a:hover {
+.project-navigation button:hover {
     color: cyan;
+    border-color: cyan;
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+footer {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 60px 0;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.contact h1 {
+    font-size: 2em;
+}
+
+.social-info {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.social-info a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-info a:hover {
+    color: cyan;
+    transform: scale(1.1);
+}
+
+/* Design */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intro h1 {
+        font-size: 2.5em;
+    }
+
+    .intro h2 {
+        font-size: 1.8em;
+    }
+
+    .intro p {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .info {
+        width: 90%;
+    }
+
+    .project-display {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    footer {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .social-info {
+        justify-content: center;
+    }
 }

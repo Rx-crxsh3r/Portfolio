@@ -3,82 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Portfolio</title>
 </head>
 <body>
-
+    
     <!-- Background Animation -->
     <canvas id="background"></canvas>
 
-    <!-- First Page -->
-    <section id="intro">
-        <div class="intro-text">
-            <h1>Hi, I'm <span class="highlight">ahmed</span></h1>
-            <h2>Dev</h2>
+    <!-- Header -->
+    <header>
+        <h1 class="logo"> </h1>
+        <nav class="navigation">
+            <button onclick="navigateTo('about')">About</button>  
+            <button onclick="navigateTo('education')">Education</button>  
+            <button onclick="navigateTo('experience')">Experience</button>  
+            <button onclick="navigateTo('skills')">Skills</button>  
+            <button onclick="navigateTo('projects')">Projects</button>  
+            <button onclick="navigateTo('contact')">Contact</button>  
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="hero">
+        <div class="intro">
+            <h1>Hello, I'm <span class="highlight">╰(*°▽°*)╯</span></h1>
+            <h2>Aspiring <span>Student</span> Dev</h2>
+            <p>Second-year Software Engineering student at Asia Pacific University (APU), Malaysia, passionate about software development, AI, and full-stack web technologies.</p>
+            <div class="social-info">
+                <a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/yourprofile" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:youremail@example.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="info">
+            <h1>About Me</h1>
+            <p>I'm a dedicated software engineering student skilled in Java, Python, C#, SQL, and web development. I have experience in chatbot development and data analytics using R.</p>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="main-content">
+    <!-- Education Section -->
+    <section id="education">
+        <div class="info">
+            <h1>Education</h1>
+            <h3>Asia Pacific University (APU), Malaysia</h3>
+            <p>BSc (Hons) in Software Engineering | 2023-2027</p>
+            <p>GPA: 5/5/5</p>
+        </div>
+    </section>
 
-        <!-- About Me-->
-        <section class="widget" id="about">
-            <h2>About Me</h2>
-            <p>I am a second-year Software Engineering student at APU, Malaysia, with expertise in Java, Python, C#, and web development.</p>
-        </section>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="info">
+            <h1>Relevant Experience</h1>
+            <h3>Startup Volunteer</h3>
+            <p>Worked on a real-world software project, improving development and collaboration skills.</p>
+            <h3>University Events Volunteer</h3>
+            <p>Assisted in organizing and managing student-led tech events.</p>
+        </div>
+    </section>
 
-        <!-- Education-->
-        <section class="widget" id="education">
-            <h2>Education</h2>
-            <p><strong>Asia Pacific University (APU), Malaysia</strong><br>BSc (Hons) in Software Engineering<br>2023-2026</p>
-        </section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="info">
+            <h1>Technical Skills</h1>
+            <h3>Languages:</h3>
+            <p>Java, Python, C#, SQL, R, C++, C, JavaScript</p>
+            <h3>Developer Tools:</h3>
+            <p>Git, GitHub, Chatbot Development</p>
+            <h3>Web Development:</h3>
+            <p>HTML, CSS, JavaScript</p>
+        </div>
+    </section>
 
-        <!-- Skills-->
-        <section class="widget" id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Java, Python, C#</li>
-                <li>SQL, R, C++, C</li>
-                <li>Web Development: HTML, CSS, JavaScript</li>
-                <li>Git, GitHub, Chatbot Development</li>
-            </ul>
-        </section>
-
-        <!-- Projects Widget with Image & Arrow Navigation -->
-        <section class="widget" id="projects">
-            <h2>Projects</h2>
-            <div class="project-display">
-                <button class="arrow left" onclick="prevProject()">&#10094;</button>
-                <div class="project-content">
-                    <h3 id="project-title">Chatbot AI</h3>
-                    <p id="project-description">Built an intelligent chatbot using Python & NLP.</p>
+    <!-- Projects Section -->
+    <section id="projects"> 
+        <div class="info">
+            <h1>Projects</h1>
+            <br>
+            <div class="project-widget">
+                <h3 id="project-title">Project Title</h3>
+                <p id="project-description">Project Description</p>
+                <a id="project-link" href="#" target="_blank">
                     <img id="project-image" src="images/image1.jpg" alt="Project Image">
+                </a>
+                <div class="project-navigation">
+                    <button id="prev">◀ Previous</button>
+                    <button id="next">Next ▶</button>
                 </div>
-                <button class="arrow right" onclick="nextProject()">&#10095;</button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Certifications-->
-        <section class="widget" id="certifications">
-            <h2>Certifications</h2>
-            <p>Python</p>
-        </section>
-
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <h2>in Touch</h2>
-            <p>currently open to any new opportunities related to my specialty. Feel free to reach out if you would like to connect.......</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+    <!-- Contact Section -->
+    <footer id="contact">
+        <div class="contact">
+            <h1>Lets connect!!</h1>
+            <p>I'm currently open to new project opportunities in software testing, development and game design. Feel free to reach out!</p>
+            
+            <div class="social-info">
+                <a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/yourprofile" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="mailto:ahmed@example.com"><i class="fa-solid fa-envelope"></i> ahmed@..</a>
             </div>
         </div>
     </footer>
