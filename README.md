@@ -143,9 +143,6 @@ While this is a personal portfolio, suggestions and feedback are welcome:
 
 ## 📞 Contact
 
-**Ahmed Baflah**
-- LinkedIn: [ahmed-baflah](https://www.linkedin.com/in/ahmed-baflah/)
-- GitHub: [Rx-crxsh3r](https://github.com/Rx-crxsh3r)
 - Email: ahmed.ab2824@gmail.com
 
 ## 📄 License
