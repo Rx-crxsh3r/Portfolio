@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Procurement Order Tracking System (POTS)",
             description: "Led the development of the Inventory Manager module for a comprehensive procurement automation system in Java. The system features real-time stock monitoring and low-stock alerts. ",
-            image: "images/pots-proj.gif",
+            image: "images/POTS-proj.gif",
             link: "https://github.com/Rx-crxsh3r/POTS-College"
         },
         {
