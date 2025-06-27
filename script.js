@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /** 🎨 Background Animation **/
-    const canvas = document.createElement("canvas");
-    document.body.appendChild(canvas);
-    Object.assign(canvas.style, {
-        position: "fixed", top: "0", left: "0", zIndex: "-1"
+    /** 🍔 Hamburger Menu Logic **/
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+    const navLinks = document.querySelectorAll(".navigation a");
+
+    menuBtn.addEventListener("click", () => {
+        navigation.classList.toggle("active");
     });
 
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navigation.classList.remove("active");
+        });
+    });
+
+    /** 🎨 Background Animation **/
+    const canvas = document.getElementById("background");
     const ctx = canvas.getContext("2d");
 
-    // Resize canvas to fit screen
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -16,70 +25,75 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Create 60 animated lines
     let lines = Array.from({ length: 60 }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        speedX: (Math.random() - 0.5) * 2,
-        speedY: (Math.random() - 0.5) * 2,
+        speedX: (Math.random() - 0.5) * 1.5,
+        speedY: (Math.random() - 0.5) * 1.5,
     }));
 
     function animateLines() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = "cyan";
-        ctx.globalAlpha = 0.5;
-
+        ctx.strokeStyle = "rgba(0, 255, 255, 0.5)";
         lines.forEach(line => {
             ctx.beginPath();
             ctx.moveTo(line.x, line.y);
             ctx.lineTo(line.x + 25, line.y + 25);
             ctx.stroke();
-
             line.x += line.speedX;
             line.y += line.speedY;
-
-            // Reverse direction if it hits screen edges
             if (line.x < 0 || line.x > canvas.width) line.speedX *= -1;
             if (line.y < 0 || line.y > canvas.height) line.speedY *= -1;
         });
-
         requestAnimationFrame(animateLines);
     }
-
-    // Adjust background opacity on scroll
+    animateLines();
+    
     window.addEventListener("scroll", () => {
         canvas.style.opacity = Math.max(0, 1 - window.scrollY / 500);
     });
 
-    animateLines();
-
-    /** 📌 Smooth Scrolling for Navigation **/
-    document.querySelectorAll(".navigation button").forEach(button => {
-        button.addEventListener("click", function () {
-            const sectionId = button.getAttribute("onclick").match(/'([^']+)'/)[1];
-            document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    /** 📌 Smooth Scrolling **/
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 
     /** 🖥️ Project Navigation **/
     const projects = [
-        { title: "Chatbot AI", description: "Built an intelligent chatbot using Python & NLP.", image: "images/image1.png", link: "https://github.com/yourchatbot" },
-        { title: "Data Sorting with R", description: "Data visualization and cleaning using R.", image: "images/image2.png", link: "https://github.com/datasorting" },
-        { title: "Portfolio Website", description: "Personal portfolio built using HTML, CSS, and JS.", image: "images/image3.jpg", link: "https://yourportfolio.com" }
+        {
+            title: "Portfolio Website",
+            description: "Developed a personal portfolio website using HTML, CSS, and JavaScript, featuring clean aesthetics and smooth animations to showcase projects and skills. ",
+            image: "images/portfolio-project.png",
+            link: "https://project1"
+        },
+        {
+            title: "Procurement Order Tracking System (POTS)",
+            description: "Led the development of the Inventory Manager module for a comprehensive procurement automation system in Java. The system features real-time stock monitoring and low-stock alerts. ",
+            image: "images/pots-project.png",
+            link: "https://project2"
+        }
     ];
 
     let currentProject = 0;
+    const projectTitle = document.getElementById("project-title");
+    const projectDescription = document.getElementById("project-description");
+    const projectImage = document.getElementById("project-image");
+    const projectLink = document.getElementById("project-link");
 
-    // Update project details
     function updateProject() {
+        if (!projects.length) return;
         const { title, description, image, link } = projects[currentProject];
-        document.getElementById("project-title").innerText = title;
-        document.getElementById("project-description").innerText = description;
-        document.getElementById("project-image").src = image;
-        document.getElementById("project-link").href = link;
+        projectTitle.innerText = title;
+        projectDescription.innerText = description;
+        projectImage.src = image;
+        projectLink.href = link;
     }
 
-    // Add event listeners for project navigation
     document.getElementById("next").addEventListener("click", () => {
         currentProject = (currentProject + 1) % projects.length;
         updateProject();
@@ -90,5 +104,5 @@ document.addEventListener("DOMContentLoaded", function () {
         updateProject();
     });
 
-    updateProject(); // Load initial project details
+    updateProject();
 });

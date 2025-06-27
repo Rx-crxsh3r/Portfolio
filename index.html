@@ -3,96 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>Portfolio</title>
+    <title>Ahmed Baflah | Portfolio</title>
 </head>
 <body>
     
-    <!-- Background Animation -->
     <canvas id="background"></canvas>
 
-    <!-- Header -->
     <header>
-        <h1 class="logo"> </h1>
+        <a href="#hero" class="logo">Ahmed Baflah</a>
         <nav class="navigation">
-            <button onclick="navigateTo('about')">About</button>  
-            <button onclick="navigateTo('education')">Education</button>  
-            <button onclick="navigateTo('experience')">Experience</button>  
-            <button onclick="navigateTo('skills')">Skills</button>  
-            <button onclick="navigateTo('projects')">Projects</button>  
-            <button onclick="navigateTo('contact')">Contact</button>  
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
+        <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
     </header>
 
-    <!-- Hero Section -->
     <main id="hero">
         <div class="intro">
-            <h1>Hello, I'm <span class="highlight">╰(*°▽°*)╯</span></h1>
-            <h2>Aspiring <span>Student</span> Dev</h2>
-            <p>Second-year Software Engineering student at Asia Pacific University (APU), Malaysia, passionate about software development, AI, and full-stack web technologies.</p>
+            <h1>Hello, I'm <span class="highlight">Ahmed Baflah</span></h1>
+            <h2>Software Engineering Student</h2>
+            <p>Motivated Software Engineering student with hands-on experience in Java-based automation systems, web development, and data visualization. Currently expanding expertise in network security, AI-driven automation, and mobile app engineering. </p>
             <div class="social-info">
-                <a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/yourprofile" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:youremail@example.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/ahmed-baflah/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/Rx-crxsh3r" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:ahmed.ab2824@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
     </main>
 
-    <!-- About Section -->
     <section id="about">
         <div class="info">
             <h1>About Me</h1>
-            <p>I'm a dedicated software engineering student skilled in Java, Python, C#, SQL, and web development. I have experience in chatbot development and data analytics using R.</p>
+            <p>I am a dedicated and motivated software engineering student with a strong foundation in programming, version control, and collaborative project development. I have hands-on experience building Java automation systems and have a keen interest in network security and AI. I thrive in team environments and am always eager to learn and apply emerging technologies to solve real-world problems.</p>
+            <h3>Languages Spoken</h3>
+            <p>English (Fluent), Arabic (Native)</p>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
         <div class="info">
             <h1>Education</h1>
-            <h3>Asia Pacific University (APU), Malaysia</h3>
-            <p>BSc (Hons) in Software Engineering | 2023-2027</p>
-            <p>GPA: 5/5/5</p>
+            <h3>Bachelor of Science (Hons) in Software Engineering</h3>
+            <p><strong>Asia Pacific University (APU)</strong>, Malaysia</p>
+            <p><i>Expected Graduation: April 2027</i></p>
+            <p>Current GPA: 3.38 / 4.0 </p>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <div class="info">
             <h1>Relevant Experience</h1>
-            <h3>Startup Volunteer</h3>
-            <p>Worked on a real-world software project, improving development and collaboration skills.</p>
-            <h3>University Events Volunteer</h3>
-            <p>Assisted in organizing and managing student-led tech events.</p>
+            <div class="experience-item">
+                <h3>Automotive E-commerce Platform - Volunteer</h3>
+                <p><i>Jeddah, Saudi Arabia | 05/2022 - 09/2022</i> </p>
+                <ul>
+                    <li>Provided minor oversight of the website's UI and backend, identifying usability improvements and reporting issues.</li>
+                    <li>Assisted with data management to ensure accurate product listings and supplier information.</li>
+                    <li>Gained exposure to e-commerce operations, including supplier management and digital storefront maintenance. </li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Extracurricular Activities</h3>
+                 <ul>
+                    <li>Participated in multiple hackathons, including <strong>APU ALPHATHON 2024</strong> and <strong>Joget Next Gen Hack 2024</strong>, collaborating with teams to develop innovative solutions. </li>
+                    <li>Volunteered in college events, assisting in organizing, coordinating, and managing activities to foster a collaborative learning environment. </li>
+                    <li>Actively attend workshops and pursue online courses to stay updated on emerging technologies. </li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="info">
             <h1>Technical Skills</h1>
-            <h3>Languages:</h3>
-            <p>Java, Python, C#, SQL, R, C++, C, JavaScript</p>
-            <h3>Developer Tools:</h3>
-            <p>Git, GitHub, Chatbot Development</p>
-            <h3>Web Development:</h3>
-            <p>HTML, CSS, JavaScript</p>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Languages</h3>
+                    <p>Java, Python, C#, C++, SQL, JavaScript, R, Dart </p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-terminal"></i>
+                    <h3>Dev Tools & IDEs</h3>
+                    <p>Android Studio, VS Code, Visual Studio, NetBeans, Git, GitHub, Blender, Unity </p>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <h3>Data & Visualization</h3>
+                    <p>R (Data Cleaning & Sorting), Power BI (Basic) </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects"> 
+    <section id="projects">
         <div class="info">
             <h1>Projects</h1>
-            <br>
             <div class="project-widget">
-                <h3 id="project-title">Project Title</h3>
-                <p id="project-description">Project Description</p>
+                <h3 id="project-title"></h3>
+                <p id="project-description"></p>
                 <a id="project-link" href="#" target="_blank">
-                    <img id="project-image" src="images/image1.jpg" alt="Project Image">
+                    <img id="project-image" src="images/placeholder.png" alt="Project Image">
                 </a>
                 <div class="project-navigation">
                     <button id="prev">◀ Previous</button>
@@ -102,19 +120,16 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <footer id="contact">
         <div class="contact">
-            <h1>Lets connect!!</h1>
-            <p>I'm currently open to new project opportunities in software testing, development and game design. Feel free to reach out!</p>
-            
+            <h1>Let's Connect!</h1>
+            <p>I'm currently open to new opportunities and collaborations. Feel free to reach out!</p>
             <div class="social-info">
-                <a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/yourprofile" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="mailto:ahmed@example.com"><i class="fa-solid fa-envelope"></i> ahmed@..</a>
+                 <a href="https://www.linkedin.com/in/ahmed-baflah/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Rx-crxsh3r" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="mailto:ahmed.ab2824@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
