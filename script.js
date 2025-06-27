@@ -68,14 +68,20 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             title: "Portfolio Website",
             description: "Developed a personal portfolio website using HTML, CSS, and JavaScript, featuring clean aesthetics and smooth animations to showcase projects and skills. ",
-            image: "images/portfolio-project.png",
-            link: "https://project1"
+            image: "images/Portfolio.gif",
+            link: "https://github.com/Rx-crxsh3r/Portfolio"
         },
         {
             title: "Procurement Order Tracking System (POTS)",
             description: "Led the development of the Inventory Manager module for a comprehensive procurement automation system in Java. The system features real-time stock monitoring and low-stock alerts. ",
-            image: "images/pots-project.png",
-            link: "https://project2"
+            image: "images/pots-proj.gif",
+            link: "https://github.com/Rx-crxsh3r/POTS-College"
+        },
+        {
+            title: "Interactive Drawing Classifier - ML-Powered Shape Recognition Tool",
+            description: "A Python GUI application that allows users to draw shapes on a canvas and trains machine learning models to classify drawings into three user-defined categories (like circle, square, triangle). The app includes features for saving training data, switching between different ML algorithms, and predicting the class of new drawings.",
+            image: "images/ML-Drawer.gif",
+            link: "https://github.com/Rx-crxsh3r/ML-PY-drawing"
         }
     ];
 

@@ -82,6 +82,7 @@ header {
     justify-content: flex-start;
     padding-left: 10%;
     position: relative;
+    margin-top: 18vh; /* Add this line */
 }
 
 #hero::after {
